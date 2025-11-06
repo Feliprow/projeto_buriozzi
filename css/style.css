@@ -27,7 +27,7 @@ body {
 /* --- 1. Cabeçalho com Imagem de Fundo e Logo --- */
 .cabecalho-login {
     height: 280px; 
-    background: url('images/banner_prinncipal.jpeg') no-repeat center center;
+    background: url('/images/banner_principal.jpeg') no-repeat center center;
     background-size: cover;
     display: flex; 
     justify-content: center; 
@@ -1350,3 +1350,497 @@ body.pagina-cheia {
     width: 14px;
     height: 14px;
 }
+
+/* --- Configurações Globais (Reset e Padrões) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f0f4f8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.tela-login {
+    width: 100%;
+    max-width: 420px; 
+    background-color: #ffffff;
+    border-radius: 24px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    overflow: hidden; 
+}
+
+/* --- 1. Cabeçalho com Imagem de Fundo e Logo --- */
+.cabecalho-login {
+    height: 280px; 
+    /* MUDANÇA AQUI: Corrigido o caminho para "subir" um nível */
+    background: url('../images/banner_principal.jpeg') no-repeat center center;
+    background-size: cover;
+    display: flex; 
+    /* MUDANÇA AQUI: Centraliza o .logo-container */
+    justify-content: center; 
+    align-items: flex-start; 
+    padding-top: 2rem; 
+    position: relative; 
+}
+
+.cabecalho-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1; 
+}
+
+/* MUDANÇA AQUI: A logo agora está dentro do container */
+.logo {
+    width: 90px; 
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); 
+    /* MUDANÇA: z-index e position agora são controlados pelo pai */
+    position: relative; 
+    z-index: auto;
+}
+
+/* --- ADIÇÃO PARA TÍTULO ABAIXO DO LOGO (INDEX) --- */
+
+/* Este container vai agrupar a logo e o texto */
+.logo-container {
+    display: flex;
+    flex-direction: column; /* Empilha o logo e o texto */
+    align-items: center; /* Centraliza o texto abaixo da logo */
+    position: relative; /* Para o z-index funcionar */
+    z-index: 2; /* Para ficar acima da película escura */
+}
+
+/* O novo título */
+.titulo-logo {
+    font-size: 1.5rem; /* Tamanho (ajustável) */
+    font-weight: 600;
+    color: #ffffff; /* Branco para contrastar com o banner */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Sombra para legibilidade */
+    margin-top: 0.5rem; /* Espaço abaixo da logo */
+}
+
+/* --- FIM DAS ADIÇÕES --- */
+
+
+/* --- 2. Formulário (O Card Branco Flutuante) --- */
+.formulario-login {
+    padding: 2rem;
+    background-color: #ffffff;
+    margin-top: -60px; 
+    border-radius: 40px 40px 0 0; 
+    position: relative; 
+    z-index: 10; 
+}
+
+/* --- Inputs (Campos de E-mail e Senha) --- */
+.grupo-input {
+    margin-bottom: 1.25rem;
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dbe1e7;
+    border-radius: 12px; 
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+/* --- "Esqueceu a senha" --- */
+.esqueceu-senha {
+    display: block;
+    text-align: right;
+    margin-top: -0.75rem; 
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #555;
+    text-decoration: none;
+}
+
+.esqueceu-senha:hover {
+    text-decoration: underline;
+}
+
+/* --- Botões Principais (Login e Cadastro) --- */
+.grupo-botoes-primario {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 14px;
+    border: none;
+    border-radius: 12px; 
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; 
+    text-align: center;
+}
+
+.btn-primario {
+    flex: 1; 
+    color: #ffffff;
+    background: linear-gradient(90deg, #00A9FF, #005F9E); 
+    box-shadow: 0 4px 15px rgba(0, 148, 255, 0.3);
+}
+
+.btn-primario:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(0, 148, 255, 0.4);
+}
+
+.btn-secundario {
+    flex: 1; 
+    background-color: #ffffff;
+    color: #00A9FF;
+    border: 2px solid #00A9FF;
+    padding: 12px;
+}
+
+.btn-secundario:hover {
+    background-color: #f0faff; 
+    transform: translateY(-2px);
+}
+
+/* --- Separador "ou" --- */
+.separador {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+.separador::before,
+.separador::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.separador:not(:empty)::before {
+    margin-right: 1em;
+}
+
+.separador:not(:empty)::after {
+    margin-left: 1em;
+}
+
+/* --- Botões Sociais (Outline) --- */
+.grupo-botoes-social .btn-contorno {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #dbe1e7;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem; 
+}
+
+.grupo-botoes-social .btn-contorno:first-child {
+    margin-bottom: 0.75rem;
+}
+
+.grupo-botoes-social .btn-contorno:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-contorno svg {
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE CADASTRO --- */
+
+.pagina-cadastro .cabecalho-login {
+    background: none; 
+    height: auto;
+    padding-bottom: 0;
+}
+
+.pagina-cadastro .cabecalho-login::before {
+    display: none; 
+}
+
+.pagina-cadastro .logo {
+    filter: none; 
+    position: relative;
+    z-index: 1;
+}
+
+.pagina-cadastro .formulario-login {
+    margin-top: 0; 
+    border-radius: 0; 
+    padding-top: 0;
+    padding: 2rem;
+}
+
+.titulo-pagina {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.subtitulo-secao {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.secao-responsavel {
+    display: none; 
+}
+
+.grupo-botoes-navegacao {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-voltar {
+    flex: 1;
+    background-color: #ffffff;
+    color: #555;
+    border: 2px solid #e0e0e0;
+    padding: 12px; 
+}
+
+.btn-voltar:hover {
+    background-color: #f8f9fa;
+    border-color: #d0d0d0;
+    transform: translateY(-2px); 
+}
+
+.btn-proximo {
+    flex: 1;
+    color: #ffffff;
+    background: linear-gradient(90deg, #00A9FF, #005F9E); 
+    box-shadow: 0 4px 15px rgba(0, 148, 255, 0.3);
+}
+
+.btn-proximo:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(0, 148, 255, 0.4);
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE ANAMNESE --- */
+
+.grupo-pergunta {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-pergunta > label {
+    font-weight: 500; 
+    color: #333;
+    display: block;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.grupo-radio {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
+}
+
+.grupo-radio-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; 
+}
+
+.grupo-radio input[type="radio"],
+.grupo-radio-vertical input[type="radio"] {
+    display: none;
+}
+
+.grupo-radio label,
+.grupo-radio-vertical label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400; 
+    color: #555;
+}
+
+.grupo-radio label::before,
+.grupo-radio-vertical label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d0d0d0;
+    border-radius: 50%; 
+    margin-right: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.grupo-radio input[type="radio"]:checked + label::before,
+.grupo-radio-vertical input[type="radio"]:checked + label::before {
+    border-color: #00A9FF; 
+    background-color: #00A9FF; 
+    box-shadow: 0 0 0 3px #ffffff inset; 
+}
+
+.grupo-radio label:hover::before,
+.grupo-radio-vertical label:hover::before {
+    border-color: #00A9FF;
+}
+
+.campo-condicional {
+    display: none; 
+    margin-top: 1rem; 
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE CONFIRMAÇÃO (COM AJUSTE DE ESPAÇO) --- */
+
+.wrapper-confirmacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    text-align: center;
+    min-height: 60vh; 
+}
+
+.texto-confirmacao p {
+    font-size: 1.1rem; 
+    color: #555;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.btn-confirma {
+    width: 100%;
+    flex: 0 0 auto; 
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE TERMOS --- */
+/* (Esta é a nova versão, 100% integrada) */
+
+/* 1. O Subtítulo */
+.subtitulo-form {
+    text-align: center;
+    color: #555;
+    margin-top: -1.5rem; /* Puxa para perto do título */
+    margin-bottom: 1.5rem;
+}
+
+/* 2. A Caixa de Rolagem (Reciclando estilos dos inputs) */
+.caixa-termos {
+    max-height: 250px; /* Um pouco mais de espaço */
+    overflow-y: auto; /* Adiciona a barra de rolagem SÓ se precisar */
+    border: 1px solid #dbe1e7; /* Mesma borda dos seus inputs */
+    border-radius: 12px; /* Mesmo radius dos seus inputs */
+    padding: 1rem;
+    background-color: #f8f9fa; /* Fundo levemente cinza */
+    margin-bottom: 1.5rem;
+}
+
+.caixa-termos h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.caixa-termos p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.5rem; /* Espaço entre parágrafos */
+}
+
+/* 3. O Checkbox de "Aceito" */
+.grupo-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.grupo-checkbox input[type="checkbox"] {
+    flex-shrink: 0; /* Impede que o checkbox encolha */
+    margin-top: 3px; /* Alinha melhor com o texto */
+    width: 18px;
+    height: 18px;
+    accent-color: #00A9FF; /* Usa o seu azul principal */
+}
+
+.grupo-checkbox label {
+    font-size: 0.9rem; /* Um pouco maior para leitura */
+    color: #555;
+    line-height: 1.5;
+}
+
+.grupo-checkbox label a {
+    color: #00A9FF; /* Seu azul principal */
+    text-decoration: none;
+    font-weight: 500;
+}
+.grupo-checkbox label a:hover {
+    text-decoration: underline;
+}
+
+/* 4. O "TRUQUE" DO LINK DESABILITADO */
+/* Esta classe .desabilitado será adicionada/removida pelo JS */
+.btn.desabilitado {
+    background: #ccc; /* Fundo cinza */
+    border-color: #ccc;
+    color: #888;
+    box-shadow: none; /* Remove a sombra */
+    cursor: not-allowed;
+    transform: none; /* Remove o efeito de "levantar" */
+    
+    /* MÁGICA: Impede que o link seja clicado */
+    pointer-events: none; 
+}
+
+/* Garante que o hover não faça nada quando desabilitado */
+.btn.desabilitado:hover { 
+    background: #ccc;
+    box-shadow: none;
+    transform: none;
+}
+
+
+
+/* --- ADIÇÕES PARA A PÁGINA HOME (DASHBOARD) ---
