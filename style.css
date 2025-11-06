@@ -1302,3 +1302,51 @@ body.pagina-cheia {
     margin-left: 1rem;
     animation: slideDown 0.3s ease-out;
 }
+
+/* --- ADIÇÕES PARA ENDEREÇO COPIÁVEL (HOME) --- */
+
+.endereco-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: #f8f9fa; /* Mesmo fundo dos itens de lista */
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem; /* Espaço abaixo do mapa */
+}
+
+.endereco-container p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Botão "Copiar" (azul sutil) */
+.btn-copiar-endereco {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    background-color: #e6f7ff; /* Fundo azul bem claro */
+    border: 1px solid #b3e0ff;
+    color: #005f9e; /* Azul escuro */
+    
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-copiar-endereco:hover {
+    background-color: #d1ecff;
+    border-color: #80cfff;
+}
+
+.btn-copiar-endereco svg {
+    width: 14px;
+    height: 14px;
+}

@@ -66,9 +66,47 @@
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+
+                <div class="endereco-container">
+                    <p id="endereco-texto">
+                        R. Antônio Lobo, 26 - Sala 3<br>
+                        Penha de França, São Paulo - SP<br>
+                        CEP: 03607-000
+                    </p>
+                    <button class="btn-copiar-endereco">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM2 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4z"/><path d="M5 0a1 1 0 0 0 0 2h7a1 1 0 0 0 1-1V.5a.5.5 0 0 0-.5-.5H5z"/></svg>
+                        <span>Copiar</span>
+                    </button>
+                </div>
             </div>
 
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnCopiar = document.querySelector('.btn-copiar-endereco');
+            const textoEndereco = document.getElementById('endereco-texto');
+
+            btnCopiar.addEventListener('click', function() {
+                // Pega o texto, removendo <br> e trocando por quebra de linha
+                const textoParaCopiar = textoEndereco.innerText;
+
+                // A "mágica" de copiar
+                navigator.clipboard.writeText(textoParaCopiar).then(() => {
+                    // Feedback visual para o usuário
+                    const spanOriginal = btnCopiar.querySelector('span');
+                    spanOriginal.textContent = 'Copiado!';
+                    
+                    setTimeout(() => {
+                        spanOriginal.textContent = 'Copiar';
+                    }, 2000); // Volta ao normal depois de 2 segundos
+
+                }).catch(err => {
+                    console.error('Erro ao copiar: ', err);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
