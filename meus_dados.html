@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Dados - Clínica Odontológica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-cheia">
+
+    <div class="container-pagina-cheia">
+        
+        <header class="header-pagina-cheia">
+            <img src="images/logo_buriozzi.png" alt="Logo da Clínica" class="logo-pequena">
+        </header>
+
+        <div class="barra-navegacao-pagina">
+            <a href="home.html" class="btn-voltar-simples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </a>
+            <span>Meus Dados</span>
+        </div>
+
+        <main class="conteudo-lista">
+            
+            <div class="lista-dados-container">
+                
+                <div class="item-dado-container">
+                    <span class="nome-dado">Nome</span>
+                    <span class="valor-dado"> usuário teste</span>
+                </div>
+                
+                <div class="item-dado-container">
+                    <span class="nome-dado">Idade</span>
+                    <span class="valor-dado">29 Anos</span> </div>
+
+                <div class="item-dado-container item-editavel">
+                    <div class="dado-view">
+                        <span class="nome-dado">E-mail</span>
+                        <span class="valor-dado valor-editavel">usuario@exemplo.com</span>
+                        <button class="btn-editar">Editar</button>
+                    </div>
+                    <div class="dado-edit" style="display: none;">
+                        <input type="email" class="input-dado" value="usuario@exemplo.com">
+                        <button class="btn-salvar">Salvar</button>
+                    </div>
+                </div>
+
+                <div class="item-dado-container item-editavel">
+                    <div class="dado-view">
+                        <span class="nome-dado">Senha</span>
+                        <span class="valor-dado valor-editavel">**********</span>
+                        <button class="btn-editar">Editar</button>
+                    </div>
+                    <div class="dado-edit" style="display: none;">
+                        <input type="password" class="input-dado" value="senha123">
+                        <button class="btn-salvar">Salvar</button>
+                    </div>
+                </div>
+
+                <div class="item-dado-container item-editavel">
+                    <div class="dado-view">
+                        <span class="nome-dado">Telefone</span>
+                        <span class="valor-dado valor-editavel">(11) 4002-8922</span>
+                        <button class="btn-editar">Editar</button>
+                    </div>
+                    <div class="dado-edit" style="display: none;">
+                        <input type="tel" class="input-dado" value="(11) 98765-4321">
+                        <button class="btn-salvar">Salvar</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div> 
+    
+    <script src="meus_dados.js" defer></script>
+</body>
+</html>

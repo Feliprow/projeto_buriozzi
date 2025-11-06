@@ -922,3 +922,196 @@ body.pagina-cheia {
 }
 
 /* --- FIM: ADIÇÕES PARA CALENDÁRIO E HORÁRIOS --- */
+
+
+
+/* --- ADIÇÕES PARA PAINEL DE CONFIRMAÇÃO E OVERLAY --- */
+
+/* 1. O Painel de Confirmação (Preço + Botão) */
+.confirmacao-container {
+    display: none; /* Começa escondido */
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e6ed;
+    animation: slideDown 0.3s ease-out;
+}
+
+.preco-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.preco-final .valor-consulta {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #005F9E; /* Azul escuro da logo */
+}
+
+/* Botão de confirmar final */
+.btn-confirmar-final {
+    width: 100%; /* Ocupa 100% da largura */
+    flex: none; /* Reseta o flex do .btn-proximo */
+}
+
+/* 2. O Overlay de "Agendamento Confirmado" */
+#overlay-confirmacao {
+    position: fixed; /* Cobre a tela inteira */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
+    
+    /* Centraliza a caixa no meio da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.caixa-confirmacao {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Efeito de "zoom" ao aparecer */
+    animation: zoomIn 0.3s ease-out;
+}
+
+.caixa-confirmacao h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.caixa-confirmacao p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+/* Animação de "zoom" */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA "MEUS DADOS" --- */
+/* (Versão 3: A Definitiva) */
+
+.lista-dados-container {
+    padding-top: 1rem;
+}
+
+/* A caixa cinza principal */
+.item-dado-container {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* O modo de visualização (Nome + Valor + Editar) */
+.dado-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nome-dado {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.dado-view .valor-dado {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    flex-grow: 1;
+    text-align: right;
+    margin-right: 1rem; 
+}
+
+.valor-editavel {
+    text-align: right !important;
+}
+
+.btn-editar {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0; 
+}
+.btn-editar:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+/* O modo de edição (Input + Salvar) */
+.dado-edit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* O espaço entre o input e o botão */
+}
+
+/* A MUDANÇA ESTÁ AQUI! 
+  Usamos 'flex: 1' em vez de 'flex-grow: 1'.
+  Isso é mais robusto e garante que o input pegue 
+  EXATAMENTE o espaço que sobrou, sem "vazar".
+*/
+.input-dado {
+    flex: 1; /* A "bala de prata" do flexbox */
+    min-width: 0; /* Correção para o flex: 1 funcionar 100% */
+    
+    padding: 10px 12px;
+    border: 1px solid #dbe1e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.input-dado:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+/* Botão "Salvar" (verde) */
+.btn-salvar {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* Impede que o botão encolha */
+}
+.btn-salvar:hover {
+    background-color: #218838;
+}
