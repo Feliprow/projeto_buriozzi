@@ -1,0 +1,924 @@
+/* --- Configurações Globais (Reset e Padrões) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f0f4f8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.tela-login {
+    width: 100%;
+    max-width: 420px; 
+    background-color: #ffffff;
+    border-radius: 24px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    overflow: hidden; 
+}
+
+/* --- 1. Cabeçalho com Imagem de Fundo e Logo --- */
+.cabecalho-login {
+    height: 280px; 
+    background: url('images/banner_prinncipal.jpeg') no-repeat center center;
+    background-size: cover;
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    padding-top: 2rem; 
+    position: relative; 
+}
+
+.cabecalho-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1; 
+}
+
+.logo {
+    width: 90px; 
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); 
+    position: relative; 
+    z-index: 2;
+}
+
+/* --- 2. Formulário (O Card Branco Flutuante) --- */
+.formulario-login {
+    padding: 2rem;
+    background-color: #ffffff;
+    margin-top: -60px; 
+    border-radius: 40px 40px 0 0; 
+    position: relative; 
+    z-index: 10; 
+}
+
+/* --- Inputs (Campos de E-mail e Senha) --- */
+.grupo-input {
+    margin-bottom: 1.25rem;
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dbe1e7;
+    border-radius: 12px; 
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+/* --- "Esqueceu a senha" --- */
+.esqueceu-senha {
+    display: block;
+    text-align: right;
+    margin-top: -0.75rem; 
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #555;
+    text-decoration: none;
+}
+
+.esqueceu-senha:hover {
+    text-decoration: underline;
+}
+
+/* --- Botões Principais (Login e Cadastro) --- */
+.grupo-botoes-primario {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 14px;
+    border: none;
+    border-radius: 12px; 
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; 
+    text-align: center;
+}
+
+.btn-primario {
+    flex: 1; 
+    color: #ffffff;
+    background: linear-gradient(90deg, #00A9FF, #005F9E); 
+    box-shadow: 0 4px 15px rgba(0, 148, 255, 0.3);
+}
+
+.btn-primario:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(0, 148, 255, 0.4);
+}
+
+.btn-secundario {
+    flex: 1; 
+    background-color: #ffffff;
+    color: #00A9FF;
+    border: 2px solid #00A9FF;
+    padding: 12px;
+}
+
+.btn-secundario:hover {
+    background-color: #f0faff; 
+    transform: translateY(-2px);
+}
+
+/* --- Separador "ou" --- */
+.separador {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+.separador::before,
+.separador::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.separador:not(:empty)::before {
+    margin-right: 1em;
+}
+
+.separador:not(:empty)::after {
+    margin-left: 1em;
+}
+
+/* --- Botões Sociais (Outline) --- */
+.grupo-botoes-social .btn-contorno {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #dbe1e7;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem; 
+}
+
+.grupo-botoes-social .btn-contorno:first-child {
+    margin-bottom: 0.75rem;
+}
+
+.grupo-botoes-social .btn-contorno:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-contorno svg {
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE CADASTRO --- */
+
+.pagina-cadastro .cabecalho-login {
+    background: none; 
+    height: auto;
+    padding-bottom: 0;
+}
+
+.pagina-cadastro .cabecalho-login::before {
+    display: none; 
+}
+
+.pagina-cadastro .logo {
+    filter: none; 
+    position: relative;
+    z-index: 1;
+}
+
+.pagina-cadastro .formulario-login {
+    margin-top: 0; 
+    border-radius: 0; 
+    padding-top: 0;
+    padding: 2rem;
+}
+
+.titulo-pagina {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.subtitulo-secao {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.secao-responsavel {
+    display: none; 
+}
+
+.grupo-botoes-navegacao {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-voltar {
+    flex: 1;
+    background-color: #ffffff;
+    color: #555;
+    border: 2px solid #e0e0e0;
+    padding: 12px; 
+}
+
+.btn-voltar:hover {
+    background-color: #f8f9fa;
+    border-color: #d0d0d0;
+    transform: translateY(-2px); 
+}
+
+.btn-proximo {
+    flex: 1;
+    color: #ffffff;
+    background: linear-gradient(90deg, #00A9FF, #005F9E); 
+    box-shadow: 0 4px 15px rgba(0, 148, 255, 0.3);
+}
+
+.btn-proximo:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(0, 148, 255, 0.4);
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE ANAMNESE --- */
+
+.grupo-pergunta {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-pergunta > label {
+    font-weight: 500; 
+    color: #333;
+    display: block;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.grupo-radio {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
+}
+
+.grupo-radio-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; 
+}
+
+.grupo-radio input[type="radio"],
+.grupo-radio-vertical input[type="radio"] {
+    display: none;
+}
+
+.grupo-radio label,
+.grupo-radio-vertical label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400; 
+    color: #555;
+}
+
+.grupo-radio label::before,
+.grupo-radio-vertical label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d0d0d0;
+    border-radius: 50%; 
+    margin-right: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.grupo-radio input[type="radio"]:checked + label::before,
+.grupo-radio-vertical input[type="radio"]:checked + label::before {
+    border-color: #00A9FF; 
+    background-color: #00A9FF; 
+    box-shadow: 0 0 0 3px #ffffff inset; 
+}
+
+.grupo-radio label:hover::before,
+.grupo-radio-vertical label:hover::before {
+    border-color: #00A9FF;
+}
+
+.campo-condicional {
+    display: none; 
+    margin-top: 1rem; 
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE CONFIRMAÇÃO (COM AJUSTE DE ESPAÇO) --- */
+
+.wrapper-confirmacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    text-align: center;
+    min-height: 60vh; 
+}
+
+.texto-confirmacao p {
+    font-size: 1.1rem; 
+    color: #555;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.btn-confirma {
+    width: 100%;
+    flex: 0 0 auto; 
+}
+
+
+/* --- ADIÇÕES PARA A PÁGINA DE TERMOS --- */
+/* (Esta é a nova versão, 100% integrada) */
+
+/* 1. O Subtítulo */
+.subtitulo-form {
+    text-align: center;
+    color: #555;
+    margin-top: -1.5rem; /* Puxa para perto do título */
+    margin-bottom: 1.5rem;
+}
+
+/* 2. A Caixa de Rolagem (Reciclando estilos dos inputs) */
+.caixa-termos {
+    max-height: 250px; /* Um pouco mais de espaço */
+    overflow-y: auto; /* Adiciona a barra de rolagem SÓ se precisar */
+    border: 1px solid #dbe1e7; /* Mesma borda dos seus inputs */
+    border-radius: 12px; /* Mesmo radius dos seus inputs */
+    padding: 1rem;
+    background-color: #f8f9fa; /* Fundo levemente cinza */
+    margin-bottom: 1.5rem;
+}
+
+.caixa-termos h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.caixa-termos p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.5rem; /* Espaço entre parágrafos */
+}
+
+/* 3. O Checkbox de "Aceito" */
+.grupo-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.grupo-checkbox input[type="checkbox"] {
+    flex-shrink: 0; /* Impede que o checkbox encolha */
+    margin-top: 3px; /* Alinha melhor com o texto */
+    width: 18px;
+    height: 18px;
+    accent-color: #00A9FF; /* Usa o seu azul principal */
+}
+
+.grupo-checkbox label {
+    font-size: 0.9rem; /* Um pouco maior para leitura */
+    color: #555;
+    line-height: 1.5;
+}
+
+.grupo-checkbox label a {
+    color: #00A9FF; /* Seu azul principal */
+    text-decoration: none;
+    font-weight: 500;
+}
+.grupo-checkbox label a:hover {
+    text-decoration: underline;
+}
+
+/* 4. O "TRUQUE" DO LINK DESABILITADO */
+/* Esta classe .desabilitado será adicionada/removida pelo JS */
+.btn.desabilitado {
+    background: #ccc; /* Fundo cinza */
+    border-color: #ccc;
+    color: #888;
+    box-shadow: none; /* Remove a sombra */
+    cursor: not-allowed;
+    transform: none; /* Remove o efeito de "levantar" */
+    
+    /* MÁGICA: Impede que o link seja clicado */
+    pointer-events: none; 
+}
+
+/* Garante que o hover não faça nada quando desabilitado */
+.btn.desabilitado:hover { 
+    background: #ccc;
+    box-shadow: none;
+    transform: none;
+}
+
+
+
+/* --- ADIÇÕES PARA A PÁGINA HOME (DASHBOARD) --- */
+/* (Versão 4: O "Template" para Você Colorir) */
+
+.home-wrapper {
+    padding: 2rem;
+}
+
+/* 1. Cabeçalho (Bem vindo + Logo) */
+.home-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem; 
+}
+.home-texto-ola h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+}
+.home-texto-ola p {
+    font-size: 1rem;
+    color: #555;
+}
+.logo-home {
+    width: 60px; 
+    height: auto;
+}
+
+/* 2. O Grid de Menu (Estilo Flat/Smart Home) */
+.grid-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem; 
+    margin-bottom: 2.5rem;
+}
+
+/* ESTILO BASE (Estrutura) - Válido para todos os cards */
+.grid-item {
+    background-color: #ffffff; /* Fundo branco padrão */
+    border: 1px solid #e0e6ed; /* Borda padrão */
+    border-radius: 16px; 
+    aspect-ratio: 1 / 1; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; 
+
+    text-decoration: none;
+    font-weight: 500;
+    color: #333; /* Texto e Ícone escuros por padrão */
+    font-size: 0.9rem;
+    text-align: center;
+    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 95, 158, 0.1); 
+}
+
+.grid-item svg {
+    color: currentColor; 
+    margin-bottom: 0.25rem;
+}
+
+/* 3. Botão do WhatsApp (CTO) */
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 14px;
+    background-color: #25D366; 
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* 4. Wrapper do Mapa */
+.mapa-wrapper {
+    margin-top: 2.5rem;
+}
+.mapa-wrapper iframe {
+    border-radius: 12px; 
+    border: 1px solid #e0e6ed; 
+    margin-top: 1rem;
+}
+
+
+.card-marcar-consulta {
+    background-color:#18344f;
+    color: #ffffff;
+}
+
+
+
+.card-financeiro {
+    background-color: #18344f;
+    color: #fff;
+}
+
+
+
+
+
+.card-historico {
+     background-color: #18344f;
+     color: #fff;
+
+}
+
+
+.card-meus-dados {
+     background-color: #18344f ;
+     color: #fff;
+}
+
+
+
+/* --- ADIÇÃO PARA O BOTÃO SAIR (HOME) --- */
+
+/* O "pacotinho" da direita */
+.cabecalho-direita {
+    display: flex;
+    flex-direction: column; /* Empilha a logo e o botão */
+    align-items: center; /* Centraliza o botão de sair */
+}
+
+/* O botão "Sair" */
+.btn-sair {
+    font-size: 0.8rem;  /* Letra pequena */
+    font-weight: 500;
+    color: #888;         /* Cinza discreto */
+    text-decoration: none;
+    margin-top: 0.25rem;  /* Espacinho abaixo da logo */
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-sair:hover {
+    background-color: #f0f0f0; /* Fica levemente cinza ao passar o mouse */
+    color: #333;
+}
+
+
+/* --- ADIÇÕES PARA PÁGINA DE CONSULTAS (Layout Tela Cheia) --- */
+
+/* 1. O novo "corpo" da página */
+body.pagina-cheia {
+    background-color: #f0f4f8; /* Fundo cinza claro (fundo do app) */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+}
+
+/* 2. O novo container (que parece o celular) */
+.container-pagina-cheia {
+    width: 100%;
+    max-width: 420px; /* Limite de largura (como o .tela-login) */
+    min-height: 100vh;
+    background-color: #ffffff; /* Fundo branco da página */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 3. O cabeçalho SÓ com a logo (como você desenhou) */
+.header-pagina-cheia {
+    padding: 1.5rem 1rem 1rem 1rem;
+    text-align: center;
+}
+.header-pagina-cheia .logo-pequena {
+    width: 40px;
+    height: auto;
+}
+
+/* 4. A barra de navegação "Voltar" (como você desenhou) */
+.barra-navegacao-pagina {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    margin: 0 1.5rem 1rem 1.5rem; /* Margem para flutuar */
+    
+    background-color: #ffffff;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px; /* Borda arredondada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.barra-navegacao-pagina span {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333;
+}
+.btn-voltar-simples {
+    color: #555;
+    text-decoration: none;
+    padding: 0;
+    background: none;
+    border: none;
+}
+.btn-voltar-simples svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 5. A Lista de Procedimentos */
+.conteudo-lista {
+    padding: 0 1.5rem; /* Só laterais */
+}
+/* Reutilizando nosso .subtitulo-secao! */
+.subtitulo-secao {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 1rem;
+    border-bottom: none; /* Não precisa de linha aqui */
+    padding-bottom: 0;
+}
+
+.lista-procedimentos-wrapper {
+    max-height: 65vh; /* Altura da lista */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.item-procedimento-container {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #e0e6ed;
+}
+
+.item-procedimento-linha-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nome-procedimento {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Botão "Marcar" verde (como você pediu) */
+.btn-marcar {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-marcar:hover {
+    background-color: #218838;
+}
+/* Quando o botão "Marcar" é clicado */
+.btn-marcar.ativo {
+    background-color: #dc3545; /* Fica vermelho (Cancelar) */
+}
+
+/* 6. A área que abre */
+.area-agendamento-condicional {
+    display: none; /* Escondido por padrão */
+    margin-top: 1rem;
+    border-top: 1px solid #e0e6ed;
+    padding-top: 1rem;
+    animation: slideDown 0.3s ease-out; /* Efeito de "deslizar" */
+}
+
+/* 7. O Resumo (Dia/Hora/Valor) */
+.resumo-agendamento {
+    display: none; /* Escondido por padrão */
+    background-color: #e6f7ff; /* Fundo azul claro */
+    border: 1px solid #b3e0ff;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    color: #005f9e;
+    margin-top: 1rem;
+    animation: slideDown 0.3s ease-out;
+}
+.resumo-agendamento p { margin: 0.25rem 0; }
+.resumo-agendamento .valor-consulta { font-weight: 600; }
+
+
+/* Placeholders (só para visualização) */
+.calendario-placeholder, .horarios-placeholder {
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+/* Animação de "deslizar" para abrir */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* marcar consulta calendário */
+
+/* --- INÍCIO: ADIÇÕES PARA CALENDÁRIO E HORÁRIOS --- */
+
+.calendario-container {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.calendario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendario-header span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.nav-calendario {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #555;
+    transition: all 0.2s ease;
+}
+.nav-calendario:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* A MÁGICA ESTÁ AQUI */
+    gap: 5px;
+    text-align: center;
+}
+
+.dia-semana {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #888;
+    padding-bottom: 0.5rem;
+}
+
+.dia-calendario {
+    padding: 0.5rem 0.1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 50%; /* A MÁGICA ESTÁ AQUI */
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.dia-calendario.dia-vazio {
+    cursor: default;
+}
+
+/* Bloqueando fins de semana */
+.dia-calendario.fim-de-semana {
+    color: #ccc;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.dia-calendario.dia-passado {
+    color: #ccc;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.dia-calendario:not(.fim-de-semana):not(.dia-vazio):not(.dia-passado):hover {
+    background-color: #e6f7ff;
+    border-color: #b3e0ff;
+}
+
+.dia-calendario.selecionado {
+    background-color: #00A9FF;
+    color: #ffffff;
+    font-weight: 600;
+    border-color: #00A9FF;
+}
+
+/* 2. O Container de Horários */
+.horarios-container {
+    display: none;
+    width: 100%;
+    animation: slideDown 0.3s ease-out;
+}
+
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* A MÁGICA ESTÁ AQUI */
+    gap: 0.5rem;
+}
+
+.btn-horario {
+    background-color: #f0f4f8;
+    border: 1px solid #dbe1e7;
+    border-radius: 8px;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-horario:hover {
+    background-color: #e6f7ff;
+    border-color: #b3e0ff;
+}
+
+.btn-horario.selecionado {
+    background-color: #00A9FF;
+    color: #ffffff;
+    border-color: #00A9FF;
+    font-weight: 600;
+}
+
+/* --- FIM: ADIÇÕES PARA CALENDÁRIO E HORÁRIOS --- */

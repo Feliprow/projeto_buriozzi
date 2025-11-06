@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Consultas - Clínica Odontológica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-cheia">
+
+    <div class="container-pagina-cheia">
+        
+        <header class="header-pagina-cheia">
+            <img src="images/logo_buriozzi.png" alt="Logo da Clínica" class="logo-pequena">
+        </header>
+
+        <div class="barra-navegacao-pagina">
+            <a href="home.html" class="btn-voltar-simples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </a>
+            <span>Marcar Consultas</span>
+        </div>
+
+        <main class="conteudo-lista">
+            <p class="subtitulo-secao">Selecione um procedimento:</p>
+
+            <div class="lista-procedimentos-wrapper">
+                
+                <div class="item-procedimento-container">
+                    <div class="item-procedimento-linha-principal">
+                        <span class="nome-procedimento" data-valor="R$ 175,00">Consulta e Avaliação</span>
+                        <button class="btn-marcar" data-target="cal-1">Marcar</button>
+                    </div>
+                    <div class="area-agendamento-condicional" id="cal-1" style="display: none;">
+                        <div class="calendario-container"></div>
+                        <div class="horarios-container"></div>
+                        <div class="confirmacao-container" style="display: none;">
+                            <div class="preco-final">
+                                <span>Valor:</span>
+                                <span class="valor-consulta">R$ 175,00</span>
+                            </div>
+                            <button class="btn btn-proximo btn-confirmar-final">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item-procedimento-container">
+                    <div class="item-procedimento-linha-principal">
+                        <span class="nome-procedimento" data-valor="R$ 250,00">Limpeza (Profilaxia)</span>
+                        <button class="btn-marcar" data-target="cal-2">Marcar</button>
+                    </div>
+                    <div class="area-agendamento-condicional" id="cal-2" style="display: none;">
+                        <div class="calendario-container"></div>
+                        <div class="horarios-container"></div>
+                        <div class="confirmacao-container" style="display: none;">
+                            <div class="preco-final">
+                                <span>Valor:</span>
+                                <span class="valor-consulta">R$ 250,00</span>
+                            </div>
+                            <button class="btn btn-proximo btn-confirmar-final">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item-procedimento-container">
+                    <div class="item-procedimento-linha-principal">
+                        <span class="nome-procedimento" data-valor="R$ 1.200,00">Clareamento (Moldeira)</span>
+                        <button class="btn-marcar" data-target="cal-3">Marcar</button>
+                    </div>
+                    <div class="area-agendamento-condicional" id="cal-3" style="display: none;">
+                        <div class="calendario-container"></div>
+                        <div class="horarios-container"></div>
+                        <div class="confirmacao-container" style="display: none;">
+                            <div class="preco-final">
+                                <span>Valor:</span>
+                                <span class="valor-consulta">R$ 1.200,00</span>
+                            </div>
+                            <button class="btn btn-proximo btn-confirmar-final">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div> 
+    
+    <div id="overlay-confirmacao" style="display: none;">
+        <div class="caixa-confirmacao">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <h2>Agendamento<br>Pré-Confirmado!</h2>
+            <p>Redirecionando para a Home...</p>
+        </div>
+    </div>
+
+    <script src="marcar_consultas.js" defer></script>
+</body>
+</html>

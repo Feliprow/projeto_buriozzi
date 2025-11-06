@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Clínica Odontológica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="tela-login">
+        
+        <div class="home-wrapper">
+            
+            <header class="home-cabecalho">
+                <div class="home-texto-ola">
+                    <h2>Bem vindo(a)!</h2>
+                    <p>O que faremos hoje?</p>
+                </div>
+
+                <div class="cabecalho-direita">
+                    <img src="images/logo_buriozzi.png" alt="Logo da Clínica" class="logo-home">
+                    <a href="index.html" class="btn-sair">Sair</a>
+                </div>
+            </header>
+
+            <nav class="grid-menu">
+                
+                <a href="marcar_consulta.html" class="grid-item card-marcar-consulta">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Marcar Consulta</span>
+                </a>
+                
+                <a href="#" class="grid-item card-financeiro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path><path d="M12 17.019c.54 0 .98-.44 .98-.98s-.44-.98-.98-.98-.98.44-.98.98.44.98.98.98zM11 7h2v6h-2z"></path></svg>
+                    <span>Financeiro</span>
+                </a>
+
+                <a href="#" class="grid-item card-historico">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                    <span>Histórico</span>
+                </a>
+
+                <a href="#" class="grid-item card-meus-dados">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Meus Dados</span>
+                </a>
+            </nav>
+
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-whatsapp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.0-6.556 5.338-11.895 11.893-11.895 3.163.0 6.136 1.253 8.413 3.53 2.278 2.278 3.531 5.25 3.53 8.413-.0 6.557-5.338 11.895-11.895 11.895-1.995.0-3.903-.52-5.607-1.476l-6.262 1.656zm6.557-4.421l.128.078c1.676.99 3.636 1.524 5.602 1.524 5.42 0 9.813-4.393 9.813-9.813s-4.393-9.813-9.813-9.813-9.813 4.393-9.813 9.813c0 2.06.6 4.023 1.698 5.718l.108.179-1.196 4.359 4.491-1.18z"></path></svg>
+                <span>WhatsApp</span>
+            </a>
+
+            <div class="mapa-wrapper">
+                <p class="subtitulo-secao">Onde estamos</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.125026937107!2d-46.54145972467069!3d-23.5281096788226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e44319a0001%3A0x6a0d2f00e9cf5f7a!2sR.%20Ant%C3%B4nio%20Lobo%2C%2026%20-%20Penha%20de%20Fran%C3%A7a%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003634-030!5e0!3m2!1spt-BR!2sbr!4v1698877028441!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

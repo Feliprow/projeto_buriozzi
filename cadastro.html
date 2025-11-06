@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Clínica Odontológica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-cadastro">
+
+    <div class="tela-login"> 
+        <header class="cabecalho-login">
+            <img src="images/logo_buriozzi.png" alt="Logo da Clínica" class="logo">
+        </header>
+
+        <main class="formulario-login"> 
+            <h2 class="titulo-pagina">Cadastro</h2> 
+            <form id="form-cadastro">
+                
+                <div class="grupo-input">
+                    <input type="text" id="nomeCompleto" placeholder="Nome Completo">
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="text" id="cpf" placeholder="CPF" maxlength="14">
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="text" id="dataNascimento" placeholder="Data de Nasc." onfocus="(this.type='date')" onblur="if(!this.value) {this.type='text';}">
+                </div>
+
+                <div id="camposResponsavel" class="secao-responsavel">
+                    <p class="subtitulo-secao">Dados do Responsável</p>
+
+                    <div class="grupo-input">
+                        <input type="text" id="nomeResponsavel" placeholder="Nome Completo Responsável">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <input type="text" id="cpfResponsavel" placeholder="CPF Responsável" maxlength="14">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <input type="email" id="emailResponsavel" placeholder="E-mail Responsável">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <input type="tel" id="telefoneResponsavel" placeholder="Telefone Responsável" maxlength="15">
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <input type="tel" id="telefone" placeholder="Telefone" maxlength="15">
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="email" id="email" placeholder="E-mail">
+                </div>
+
+                <div class="grupo-botoes-navegacao">
+                    <a href="index.html" class="btn btn-voltar">Voltar</a>
+                    <a href="cadastro_anamnese.html" class="btn btn-proximo">Próximo</a>
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- LÓGICA 1: MOSTRAR/ESCONDER CAMPOS DO RESPONSÁVEL ---
+            
+            const dataNascimentoInput = document.getElementById('dataNascimento');
+            const camposResponsavelDiv = document.getElementById('camposResponsavel');
+
+            function calcularIdade(dataNasc) {
+                const hoje = new Date();
+                const nasc = new Date(dataNasc);
+                let idade = hoje.getFullYear() - nasc.getFullYear();
+                const mes = hoje.getMonth() - nasc.getMonth();
+                if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())) {
+                    idade--;
+                }
+                return idade;
+            }
+
+            function verificarIdadeEResponsavel() {
+                const dataNascValue = dataNascimentoInput.value;
+                if (dataNascValue) {
+                    const idade = calcularIdade(dataNascValue);
+                    if (idade < 18) {
+                        camposResponsavelDiv.style.display = 'block'; 
+                    } else {
+                        camposResponsavelDiv.style.display = 'none'; 
+                    }
+                } else {
+                    camposResponsavelDiv.style.display = 'none'; 
+                }
+            }
+
+            dataNascimentoInput.addEventListener('change', verificarIdadeEResponsavel);
+            verificarIdadeEResponsavel(); // Verifica ao carregar
+
+            // --- LÓGICA 2: MÁSCARAS E FILTROS DE INPUT ---
+
+            // Função para formatar NOME (só letras, espaços e acentos)
+            function formatarNome(input) {
+                let valor = input.value;
+                // Substitui tudo que NÃO for letra, acento ou espaço por nada
+                valor = valor.replace(/[^a-zA-Z\sÀ-ú]/g, '');
+                input.value = valor;
+            }
+            
+            // Função para formatar CPF (000.000.000-00)
+            function formatarCPF(input) {
+                let valor = input.value;
+                // 1. Remove tudo que não for número
+                valor = valor.replace(/\D/g, '');
+                // 2. Aplica a máscara
+                valor = valor.replace(/(\d{3})(\d)/, '$1.$2'); // 123.4
+                valor = valor.replace(/(\d{3})(\d)/, '$1.$2'); // 123.456.7
+                valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // 123.456.789-00
+                input.value = valor;
+            }
+
+            // Função para formatar TELEFONE ((00) 00000-0000)
+            function formatarTelefone(input) {
+                let valor = input.value;
+                // 1. Remove tudo que não for número
+                valor = valor.replace(/\D/g, '');
+                // 2. Aplica a máscara
+                valor = valor.replace(/^(\d{2})/, '($1) '); // (11) 
+                valor = valor.replace(/(\d{5})(\d{4})$/, '$1-$2'); // (11) 98765-4321 (celular)
+                valor = valor.replace(/(\d{4})(\d{4})$/, '$1-$2'); // (11) 8765-4321 (fixo)
+                input.value = valor;
+            }
+
+            // --- "VIGIANDO" OS CAMPOS (Adicionando os Listeners) ---
+
+            const inputNomeCompleto = document.getElementById('nomeCompleto');
+            const inputCPF = document.getElementById('cpf');
+            const inputTelefone = document.getElementById('telefone');
+            
+            const inputNomeResp = document.getElementById('nomeResponsavel');
+            const inputCPFResp = document.getElementById('cpfResponsavel');
+            const inputTelResp = document.getElementById('telefoneResponsavel');
+
+            // 'input' é o evento que dispara a CADA tecla digitada
+            inputNomeCompleto.addEventListener('input', () => formatarNome(inputNomeCompleto));
+            inputCPF.addEventListener('input', () => formatarCPF(inputCPF));
+            inputTelefone.addEventListener('input', () => formatarTelefone(inputTelefone));
+            
+            inputNomeResp.addEventListener('input', () => formatarNome(inputNomeResp));
+            inputCPFResp.addEventListener('input', () => formatarCPF(inputCPFResp));
+            inputTelResp.addEventListener('input', () => formatarTelefone(inputTelResp));
+
+        });
+    </script>
+</body>
+</html>

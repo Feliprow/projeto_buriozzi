@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamnese - Clínica Odontológica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-cadastro">
+
+    <div class="tela-login"> 
+        <header class="cabecalho-login">
+            <img src="images/logo_buriozzi.png" alt="Logo da Clínica" class="logo">
+        </header>
+
+        <main class="formulario-login"> 
+            <h2 class="titulo-pagina">Anamnese</h2> 
+            
+            <form id="form-anamnese">
+                
+                <p class="subtitulo-secao">Saúde Geral</p>
+
+                <div class="grupo-pergunta">
+                    <label>Você possui alguma doença sistêmica ou condição de saúde (Ex: diabetes, pressão alta, etc.)?</label>
+                    <div class="grupo-radio">
+                        <div>
+                            <input type="radio" id="doenca_sim" name="doenca_sistemica" value="sim">
+                            <label for="doenca_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="doenca_nao" name="doenca_sistemica" value="nao">
+                            <label for="doenca_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-pergunta">
+                    <label>Você faz uso contínuo de algum medicamento (Ex: anticoagulantes, insulina, etc.)?</label>
+                    <div class="grupo-radio">
+                        <div>
+                            <input type="radio" id="medicamento_sim" name="medicamento_continuo" value="sim">
+                            <label for="medicamento_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medicamento_nao" name="medicamento_continuo" value="nao">
+                            <label for="medicamento_nao">Não</label>
+                        </div>
+                    </div>
+                    <div id="campo_medicamento" class="campo-condicional grupo-input">
+                        <input type="text" id="input_medicamento" placeholder="Se sim, qual(is)?">
+                    </div>
+                </div>
+
+                <p class="subtitulo-secao">Alergias e Reações</p>
+
+                <div class="grupo-pergunta">
+                    <label>Você tem alergia a algum medicamento, anestesia ou material (Ex: látex)?</label>
+                    <div class="grupo-radio">
+                        <div>
+                            <input type="radio" id="alergia_sim" name="alergia" value="sim">
+                            <label for="alergia_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="alergia_nao" name="alergia" value="nao">
+                            <label for="alergia_nao">Não</label>
+                        </div>
+                    </div>
+                    <div id="campo_alergia" class="campo-condicional grupo-input">
+                        <input type="text" id="input_alergia" placeholder="Se sim, qual(is)?">
+                    </div>
+                </div>
+
+                <div class="grupo-pergunta">
+                    <label>Já teve alguma reação negativa em tratamento odontológico (desmaio, palpitação, etc.)?</label>
+                    <div class="grupo-radio">
+                        <div>
+                            <input type="radio" id="reacao_sim" name="reacao_anterior" value="sim">
+                            <label for="reacao_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="reacao_nao" name="reacao_anterior" value="nao">
+                            <label for="reacao_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="subtitulo-secao">Hábitos e Outros</p>
+
+                <div class="grupo-pergunta">
+                    <label>Você é fumante?</label>
+                    <div class="grupo-radio">
+                        <div>
+                            <input type="radio" id="fumante_sim" name="fumante" value="sim">
+                            <label for="fumante_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="fumante_nao" name="fumante" value="nao">
+                            <label for="fumante_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-pergunta">
+                    <label>Você tem problemas de cicatrização ou sangra muito ao se cortar?</label>
+                    <div class="grupo-radio">
+                        <div>
+                            <input type="radio" id="cicatrizacao_sim" name="cicatrizacao" value="sim">
+                            <label for="cicatrizacao_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="cicatrizacao_nao" name="cicatrizacao" value="nao">
+                            <label for="cicatrizacao_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-pergunta">
+                    <label>(Para pacientes do sexo feminino) Você está grávida ou suspeita estar?</label>
+                    <div class="grupo-radio">
+                        <div>
+                            <input type="radio" id="gravida_sim" name="gravidez" value="sim">
+                            <label for="gravida_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="gravida_nao" name="gravidez" value="nao">
+                            <label for="gravida_nao">Não</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="gravida_na" name="gravidez" value="na">
+                            <label for="gravida_na">Não se aplica</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="subtitulo-secao">Motivo da Consulta</p>
+                
+                <div class="grupo-pergunta">
+                    <label>Qual o principal motivo da sua visita hoje?</label>
+                    <div class="grupo-radio-vertical">
+                        <div>
+                            <input type="radio" id="motivo_dor" name="motivo_visita" value="dor">
+                            <label for="motivo_dor">Dor</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="motivo_rotina" name="motivo_visita" value="rotina">
+                            <label for="motivo_rotina">Rotina / Limpeza</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="motivo_estetica" name="motivo_visita" value="estetica">
+                            <label for="motivo_estetica">Estética</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="motivo_outro" name="motivo_visita" value="outro">
+                            <label for="motivo_outro">Outro</label>
+                        </div>
+                    </div>
+                    <div id="campo_motivo" class="campo-condicional grupo-input">
+                        <input type="text" id="input_motivo" placeholder="Se sim, qual?">
+                    </div>
+                </div>
+
+                <div class="grupo-botoes-navegacao">
+                    <button type="button" class="btn btn-voltar" onclick="window.location.href='cadastro.html'">Voltar</button>
+                    <button type="submit" id="btn-proximo-anamnese" class="btn btn-proximo" disabled>Próximo</button>
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- NOSSOS "VIGIAS" ---
+            const formAnamnese = document.getElementById('form-anamnese');
+            const btnProximo = document.getElementById('btn-proximo-anamnese');
+
+            // --- Lista de TODAS as perguntas de rádio (8 grupos) ---
+            const nomesPerguntasRadio = [
+                'doenca_sistemica',
+                'medicamento_continuo',
+                'alergia',
+                'reacao_anterior',
+                'fumante',
+                'cicatrizacao',
+                'gravidez',
+                'motivo_visita'
+            ];
+
+            // --- Nossos campos de texto condicionais ---
+            const inputMedicamento = document.getElementById('input_medicamento');
+            const inputAlergia = document.getElementById('input_alergia');
+            const inputMotivo = document.getElementById('input_motivo');
+
+            // --- Função Mágica: O "Vigia" Chefe ---
+            function validarFormulario() {
+                let perguntasRespondidas = 0;
+                let condicionalOk = true;
+
+                // 1. Checa todos os grupos de rádio
+                for (const nome of nomesPerguntasRadio) {
+                    // querySelector('...:checked') acha o rádio marcado
+                    if (formAnamnese.querySelector(`input[name="${nome}"]:checked`)) {
+                        perguntasRespondidas++;
+                    }
+                }
+                
+                // 2. Checa as regras condicionais
+                
+                // Regra Medicamento: Se "Sim" estiver marcado, o campo não pode estar vazio
+                if (document.getElementById('medicamento_sim').checked && inputMedicamento.value.trim() === '') {
+                    condicionalOk = false;
+                }
+                
+                // Regra Alergia: Se "Sim" estiver marcado, o campo não pode estar vazio
+                if (document.getElementById('alergia_sim').checked && inputAlergia.value.trim() === '') {
+                    condicionalOk = false;
+                }
+                
+                // Regra Motivo: Se "Outro" estiver marcado, o campo não pode estar vazio
+                if (document.getElementById('motivo_outro').checked && inputMotivo.value.trim() === '') {
+                    condicionalOk = false;
+                }
+                
+                // --- O Veredito ---
+                if (perguntasRespondidas === nomesPerguntasRadio.length && condicionalOk) {
+                    btnProximo.disabled = false; // Desbloqueia!
+                } else {
+                    btnProximo.disabled = true; // Bloqueia!
+                }
+            }
+
+            // --- Lógica dos campos condicionais (mostrar/esconder) ---
+            
+            function vigiarCampoCondicional(radioSimId, radioNaoId, campoDivId) {
+                const radioSim = document.getElementById(radioSimId);
+                const radioNao = document.getElementById(radioNaoId);
+                const campoDiv = document.getElementById(campoDivId);
+
+                radioSim.addEventListener('change', () => {
+                    if (radioSim.checked) campoDiv.style.display = 'block';
+                    validarFormulario(); // Revalida o form a cada clique
+                });
+
+                if (radioNao) {
+                    radioNao.addEventListener('change', () => {
+                        if (radioNao.checked) campoDiv.style.display = 'none';
+                        validarFormulario(); // Revalida o form a cada clique
+                    });
+                } else {
+                    // Para grupos com mais de 2 opções (tipo "Motivo")
+                    const outrosRadios = formAnamnese.querySelectorAll(`input[name="${radioSim.name}"]:not(#${radioSimId})`);
+                    outrosRadios.forEach(radio => {
+                        radio.addEventListener('change', () => {
+                            if (!radioSim.checked) campoDiv.style.display = 'none';
+                            validarFormulario(); // Revalida o form a cada clique
+                        });
+                    });
+                }
+            }
+
+            // Ativando os "vigias" condicionais
+            vigiarCampoCondicional('medicamento_sim', 'medicamento_nao', 'campo_medicamento');
+            vigiarCampoCondicional('alergia_sim', 'alergia_nao', 'campo_alergia');
+            // O "Motivo" é um caso especial, vigiamos o 'outro'
+            vigiarCampoCondicional('motivo_outro', null, 'campo_motivo');
+
+
+            // --- VIGIAR TUDO! ---
+            // Adiciona um listener no formulário inteiro que "escuta" por mudanças ou digitação
+            formAnamnese.addEventListener('change', validarFormulario);
+            formAnamnese.addEventListener('keyup', validarFormulario);
+
+            // Roda a validação uma vez ao carregar (para garantir que o botão comece bloqueado)
+            validarFormulario();
+
+            // --- Controlar o "Próximo" ---
+            // Quando o formulário for enviado (pois o botão é 'submit')
+            formAnamnese.addEventListener('submit', function(e) {
+                e.preventDefault(); // Impede o envio real (já que é estético)
+                // Se chegou aqui, o botão estava desbloqueado!
+                console.log('Formulário válido! Navegando...');
+                window.location.href = 'cadastro_termos.html'; // Navega para a próxima página
+            });
+        });
+    </script>
+</body>
+</html>
