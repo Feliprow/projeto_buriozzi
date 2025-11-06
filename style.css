@@ -1115,3 +1115,75 @@ body.pagina-cheia {
 .btn-salvar:hover {
     background-color: #218838;
 }
+
+/* --- ADIÇÕES PARA A PÁGINA "HISTÓRICO" --- */
+
+.lista-historico-container {
+    padding-top: 1rem;
+    max-height: 70vh; /* Altura da caixa de rolagem */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.item-historico {
+    /* Reutiliza o estilo do container de "Meus Dados" */
+    background-color: #f8f9fa;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    
+    /* Layout flex para alinhar o botão "Anexo" */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-historico {
+    display: flex;
+    flex-direction: column; /* Empilha o nome e a data */
+    gap: 0.25rem;
+}
+
+.nome-consulta-hist {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.data-consulta-hist {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #555;
+}
+
+/* O botão "Anexo" (azul, como um link) */
+.btn-anexo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    background-color: #e6f7ff; /* Fundo azul bem claro */
+    border: 1px solid #b3e0ff;
+    color: #005f9e; /* Azul escuro */
+    
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-anexo:hover {
+    background-color: #d1ecff;
+    border-color: #80cfff;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1);
+}
+
+.btn-anexo svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
+}
