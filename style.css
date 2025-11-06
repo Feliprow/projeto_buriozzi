@@ -1187,3 +1187,118 @@ body.pagina-cheia {
     height: 16px;
     stroke-width: 2.5;
 }
+
+/* --- ADIÇÕES PARA A PÁGINA "FINANCEIRO" --- */
+
+.botoes-acao-financeiro {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botões "Pagar" e "Ver Histórico" */
+.btn-acao-financeiro {
+    flex: 1; /* Dividem o espaço */
+    background-color: #f8f9fa;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Estilo do botão ATIVO (quando clicado) */
+.btn-acao-financeiro.ativo {
+    background-color: #00A9FF; /* Cor da sua logo */
+    color: #ffffff;
+    border-color: #00A9FF;
+    box-shadow: 0 4px 12px rgba(0, 169, 255, 0.2);
+}
+
+.painel-financeiro {
+    /* Escondido por padrão, controlado pelo JS */
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Botões de Opção de Pagamento (Pix, Cartão...) */
+.btn-pagamento {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    background-color: #f8f9fa;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-pagamento:hover {
+    background-color: #ffffff;
+    border-color: #00A9FF;
+    box-shadow: 0 4px 12px rgba(0, 169, 255, 0.1);
+}
+
+.btn-pagamento svg {
+    width: 24px;
+    height: 24px;
+    color: #00A9FF; /* Cor da logo */
+}
+
+/* Reutiliza o estilo de .lista-historico-container 
+   mas remove o padding-top e limita a altura
+*/
+.painel-financeiro .lista-historico-container {
+    padding-top: 0;
+    max-height: 50vh;
+}
+
+/* --- ADIÇÕES PARA "FINANCEIRO" (Débito Pendente) --- */
+
+/* Item de débito (clicável) */
+.item-a-pagar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: #fff; /* Fundo branco, mais destaque */
+    border: 1px solid #00A9FF; /* Borda azul (ativo) */
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 169, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+.item-a-pagar:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.item-a-pagar .info-historico .data-consulta-hist {
+    color: #dc3545; /* Vermelho para "Pendente" */
+    font-weight: 500;
+}
+
+.item-a-pagar svg {
+    color: #00A9FF; /* Seta azul */
+}
+
+/* O container das 3 opções de pagamento */
+.opcoes-de-pagamento {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-left: 2px solid #e0e6ed;
+    margin-left: 1rem;
+    animation: slideDown 0.3s ease-out;
+}

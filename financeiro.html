@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro - Clínica Odontológica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-cheia">
+
+    <div class="container-pagina-cheia">
+        
+        <header class="header-pagina-cheia">
+            <img src="images/logo_buriozzi.png" alt="Logo da Clínica" class="logo-pequena">
+        </header>
+
+        <div class="barra-navegacao-pagina">
+            <a href="home.html" class="btn-voltar-simples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </a>
+            <span>Financeiro</span>
+        </div>
+
+        <main class="conteudo-lista">
+            
+            <div class="botoes-acao-financeiro">
+                <button class="btn-acao-financeiro" id="btn-toggle-pagar">
+                    Pagar
+                </button>
+                <button class="btn-acao-financeiro" id="btn-toggle-historico">
+                    Ver Histórico
+                </button>
+            </div>
+
+            <div class="painel-financeiro" id="painel-pagar" style="display: none;">
+                <p class="subtitulo-secao">Pagamentos Pendentes:</p>
+                
+                <div class="item-a-pagar" id="debito-1">
+                    <div class="info-historico">
+                        <span class="nome-consulta-hist">Consulta de Avaliação</span>
+                        <span class="data-consulta-hist">Pendente - R$ 175,00</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                
+                <div class="opcoes-de-pagamento" id="opcoes-debito-1" style="display: none;">
+                    <a href="#" class="btn-pagamento" onclick="alert('Simulação: Abrindo Câmera para QR Code Pix')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M11.125 1.5H11c-.303 0-.542.22-.572.517l-.022.181c-.134.8-.318 1.63-.564 2.48H7.042c-.233-.797-.41-1.612-.54-2.427L6.48.517C6.449.22 6.21 0 5.908 0H5.874c-.32 0-.58.243-.603.556L5.232 2.5H2.5a.5.5 0 0 0-.5.5v3h2.688c.18-.89.47-1.78.845-2.625h2.904c.383.87.67 1.77.85 2.688H14v-3a.5.5 0 0 0-.5-.5h-2.54L11.125 1.5zM3.5 10H2V6h1.5v4zm2.188 0H4.5V6h1.188v4zm1.624 0H6.5V6h1.312v4zm1.625 0h-1.19V6h1.19v4zm1.625 0h-1.19V6h1.19v4zm1.625 0h-1.19V6h1.19v4zm1.625 0h-1.19V6h1.19v4zM14 10h-1.5V6H14v4zM.5 12.5a.5.5 0 0 0 .5.5H3v2.688c-.89.18-1.78.47-2.625.845V13.5H.5a.5.5 0 0 0-.5.5zM3.5 13v2.188c.87.383 1.77.67 2.688.85V13H3.5zm3.188 0v3.03c.8-.134 1.63-.318 2.48-.564v-2.466H6.688zM10.5 13v2.408c.797-.232 1.612-.41 2.427-.54V13h-2.427zm3 0v2.625c.845-.374 1.735-.664 2.625-.845V13H13.5zM16 12.5a.5.5 0 0 0-.5-.5H13v3h.188c.89-.18 1.78-.47 2.625-.845V13.5H16a.5.5 0 0 0 .5-.5z"/></svg>
+                        <span>Pagar com Pix (QR Code)</span>
+                    </a>
+                    <a href="#" class="btn-pagamento" onclick="alert('Simulação: Abrindo formulário de Cartão')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg>
+                        <span>Pagar com Cartão</span>
+                    </a>
+                    <a href="#" class="btn-pagamento" onclick="alert('Simulação: Enviando link de pagamento para seu WhatsApp')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.708.819-1z"/><path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.819 1H12a3 3 0 1 0 0-6H9z"/></svg>
+                        <span>Receber Link de Pagamento</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="painel-financeiro" id="painel-historico" style="display: none;">
+                <p class="subtitulo-secao">Histórico de pagamentos:</p>
+                <div class="lista-historico-container" style="padding-top: 0; max-height: 50vh;">
+                    <div class="item-historico">
+                        <div class="info-historico">
+                            <span class="nome-consulta-hist">Limpeza (Profilaxia)</span>
+                            <span class="data-consulta-hist">15/10/2025 - PAGO (Pix)</span>
+                        </div>
+                        <a href="#" class="btn-anexo" onclick="alert('Simulação: Abrindo Comprovante...')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                            <span>Comprovante</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div> 
+    
+    <script src="financeiro.js" defer></script>
+</body>
+</html>
