@@ -1953,3 +1953,148 @@ body {
 .btn-salvar:hover {
     background-color: #218838;
 }
+
+/* --- ADIÇÕES PARA A PÁGINA "HISTÓRICO" --- */
+/* (Versão 2: Com correção de quebra de linha) */
+
+.lista-historico-container {
+    padding-top: 1rem;
+    max-height: 70vh; /* Altura da caixa de rolagem */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.item-historico {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Adiciona gap para evitar colisão */
+    gap: 0.5rem; 
+}
+
+.info-historico {
+    display: flex;
+    flex-direction: column; /* Empilha o nome e a data */
+    gap: 0.25rem;
+
+    /* MUDANÇA: Ocupa o espaço disponível e encolhe */
+    flex: 1;
+    min-width: 0;
+}
+
+.nome-consulta-hist {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+
+    /* MUDANÇA: Impede a quebra de linha */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.data-consulta-hist {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #555;
+
+    /* MUDANÇA: Impede a quebra de linha */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* O botão "Anexo" (azul, como um link) */
+.btn-anexo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+    color: #005f9e;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* MUDANÇA: Impede que o botão encolha */
+    flex-shrink: 0; 
+}
+
+.btn-anexo:hover {
+    background-color: #d1ecff;
+    border-color: #80cfff;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1);
+}
+
+.btn-anexo svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
+}
+
+/* Linha separadora (para "Próximo Agendamento") */
+.linha-separadora {
+    border: none;
+    height: 1px;
+    background-color: #e0e6ed; /* Cor cinza da paleta */
+    margin: 2rem 0 1.5rem 0; /* Espaçamento */
+}
+
+/* O "quadrado" da consulta ativa */
+.item-agendamento-ativo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #00A9FF; 
+    box-shadow: 0 4px 12px rgba(0, 169, 255, 0.1); 
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    
+    /* MUDANÇA: Adiciona gap */
+    gap: 0.5rem;
+}
+
+.item-agendamento-ativo .data-consulta-hist {
+    color: #005f9e; /* Azul escuro para destacar a data */
+    font-weight: 500;
+}
+
+/* Botão "Cancelar" (vermelho) */
+.btn-cancelar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #dc3545; /* Vermelho "Cancelar" */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* MUDANÇA: Impede que o botão encolha */
+    flex-shrink: 0; 
+}
+
+.btn-cancelar:hover {
+    background-color: #c82333; /* Vermelho mais escuro */
+}
+
+.btn-cancelar svg {
+    width: 14px;
+    height: 14px;
+}
