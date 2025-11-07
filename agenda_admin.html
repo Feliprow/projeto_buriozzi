@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - Admin Buriozzi</title>
+    <link rel="stylesheet" href="css/style_desktop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body"> <header class="admin-header">
+        <div class="admin-header-logo">
+            <img src="images/logo_buriozzi.png" alt="Logo Buriozzi">
+            <span>Instituto Buriozzi</span>
+        </div>
+        <a href="admin.html" class="btn-admin-sair">Sair</a>
+    </header>
+
+    <nav class="admin-nav">
+        <a href="agenda_admin.html" class="nav-item ativo">Agenda</a>
+        <a href="#" class="nav-item">Pacientes</a>
+        <a href="#" class="nav-item">Financeiro</a>
+        <a href="#" class="nav-item">Dentistas</a>
+    </nav>
+
+    <main class="agenda-container">
+
+        <div class="agenda-grid">
+            
+            <div class="grid-header grid-horario-label">Horários</div>
+            <div class="grid-header">Segunda (04/11)</div>
+            <div class="grid-header">Terça (05/11)</div>
+            <div class="grid-header">Quarta (06/11)</div>
+            <div class="grid-header">Quinta (07/11)</div>
+            <div class="grid-header">Sexta (08/11)</div>
+
+            <div class="grid-horario-label">09:00</div>
+            
+            <div class="grid-item horario-pendente">
+                <strong>(Pendente)</strong>
+                <span>Felipe Neres</span>
+                <span>Limpeza</span>
+            </div>
+            
+            <div class="grid-item horario-livre"></div>
+            
+            <div class="grid-item horario-ocupado">
+                <strong>Felipe Neres</strong>
+                <span>Implante (Etapa 1)</span>
+                <div class="icone-sino">🔔</div>
+            </div>
+
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <div class="grid-horario-label">10:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-ocupado">
+                <strong>Renato Angeli</strong>
+                <span>Avaliação</span>
+            </div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <div class="grid-horario-label">11:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-pendente">
+                <strong>(Pendente)</strong>
+                <span>Matheus Ferreira</span>
+                <span>Canal</span>
+            </div>
+            <div class="grid-item horario-livre"></div>
+
+            <div class="grid-horario-label">12:00</div>
+             <div class="grid-item horario-bloqueado">Almoço</div>
+             <div class="grid-item horario-bloqueado">Almoço</div>
+             <div class="grid-item horario-bloqueado">Almoço</div>
+             <div class="grid-item horario-bloqueado">Almoço</div>
+             <div class="grid-item horario-bloqueado">Almoço</div>
+
+        </div>
+    </main>
+    
+</body>
+</html>

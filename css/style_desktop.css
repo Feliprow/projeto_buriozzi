@@ -1,0 +1,108 @@
+/* --- ESTILOS DO PAINEL ADMIN (DESKTOP) --- */
+
+/* 1. Configurações Globais (Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* 2. O "Corpo" da página e o wrapper para centralizar tudo */
+body {
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    overflow: hidden; /* Garante que o blur não crie barras de rolagem */
+}
+
+/* O wrapper para a logo, título e caixa de login */
+.admin-wrapper {
+    display: flex;
+    flex-direction: column; /* Empilha a logo/título e a caixa de login */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Para o texto dentro do conteudo-externo */
+    z-index: 10; /* Garante que fique na frente do blur */
+}
+
+/* 3. O "Truque" do Fundo com Blur */
+body::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px; /* Expande para cobrir */
+    background: url('../images/consultorio.jpeg') no-repeat center center;
+    background-size: cover;
+    filter: blur(4px);
+    z-index: -1; 
+}
+
+/* 4. Conteúdo Externo (Logo e Título) */
+.admin-conteudo-externo {
+    margin-bottom: 2rem; /* Espaço entre o título e a caixa de login */
+}
+
+/* 5. A Logo */
+.admin-logo {
+    width: 90px;
+    height: auto;
+    /* Usar margin-bottom no .admin-conteudo-externo ao invés daqui */
+}
+
+/* 6. O Título */
+.admin-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333; /* Cor escura para o texto */
+    margin-top: 0.5rem; /* Espaço entre logo e título */
+}
+
+/* 7. A Caixa de Login Branca (do seu mockup) */
+.admin-login-box {
+    width: 100%;
+    max-width: 380px; /* Reduzi um pouco a largura para ficar mais compacto */
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 2rem; /* Reduzi um pouco o padding interno */
+}
+
+/* 8. Os Inputs */
+.grupo-input-admin input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dbe1e7;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.grupo-input-admin input:focus {
+    outline: none;
+    border-color: #6f42c1; /* Foco Roxo */
+    box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.15);
+}
+
+/* 9. O Botão "entrar" */
+.btn-admin-entrar {
+    display: block; /* Para garantir que o link ocupe toda a largura */
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove o sublinhado do link */
+    
+    background-color: #6f42c1; /* Roxo */
+    color: #ffffff;
+    margin-top: 1rem;
+}
+.btn-admin-entrar:hover {
+    background-color: #5a359a;
+}
