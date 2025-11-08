@@ -43,7 +43,7 @@ O foco principal é **otimizar o atendimento e a comunicação interna da clíni
 | Página          | Função                     | Link                        |
 | --------------- | -------------------------- | --------------------------- |
 | `index.html`    | Página de login do usuário | *https://feliprow.github.io/projeto_buriozzi/* |
-| `admin.html`    | Painel do administrador    | *(inserir link do arquivo)* |
+| `admin.html`    | Painel do administrador    | *https://feliprow.github.io/projeto_buriozzi/admin.html* |
 | `dentista.html` | Painel do dentista         | *(inserir link do arquivo)* |
 
 ---
