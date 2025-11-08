@@ -7,7 +7,7 @@
 O **Instituto Buriozzi** é uma pequena clínica localizada no bairro da Penha de França, em São Paulo - SP.
 A instituição enfrenta alguns gargalos em sua operação devido à ausência de soluções tecnológicas adequadas para o gerenciamento de seus atendimentos, pacientes e processos internos.
 
-Com a **coordenação do Prof. Me. Jadir Custódia Mendonça Jr.**, e o envolvimento do corpo discente composto por **David Ben, Felipe Vieira, Matheus Ferreira, Rafel Santiago, Renato Angeli**, tivemos a oportunidade de desenvolver uma proposta de **site mobile funcional**, voltado à melhoria da comunicação e organização da clínica.
+Com a **coordenação do Prof. Me. Jadir Custódia Mendonça Jr.**, e o envolvimento do corpo discente composto por **David Ben, Felipe Vieira, Matheus Ferreira, Rafael Santiago, Renato Angeli**, tivemos a oportunidade de desenvolver uma proposta de **site mobile funcional**, voltado à melhoria da comunicação e organização da clínica.
 
 ---
 
