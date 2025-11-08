@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentistas - Admin Buriozzi</title>
+    
+    <link rel="stylesheet" href="css/style_desktop.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+    <header class="admin-header">
+        <div class="admin-header-logo">
+            <img src="images/logo_buriozzi.png" alt="Logo Buriozzi">
+            <span>Instituto Buriozzi</span>
+        </div>
+        <a href="admin.html" class="btn-admin-sair">Sair</a>
+    </header>
+
+    <nav class="admin-nav">
+        <a href="agenda_admin.html" class="nav-item">Agenda</a>
+        <a href="pacientes_admin.html" class="nav-item">Pacientes</a>
+        <a href="dentistas_admin.html" class="nav-item ativo">Dentistas</a> 
+    </nav>
+
+    <main class="dentistas-container">
+        <div class="dentistas-header">
+            <input type="text" placeholder="Buscar dentista..." class="dentista-search-input">
+            </div>
+
+        <div class="dentistas-lista">
+            
+            <div class="dentista-row header">
+                <div class="dentista-nome">Nome do Dentista</div>
+                <div class="dentista-acao">Editar Horários (Disponibilidade)</div>
+                <div class="dentista-acao">Editar Informações</div>
+            </div>
+
+            <div class="dentista-row">
+                <div class="dentista-nome">Dr. Ricardo Buriozzi</div>
+                <div class="dentista-acao"><button class="btn-acao btn-horarios">📅</button></div>
+                <div class="dentista-acao"><button class="btn-acao btn-editar">✏️</button></div>
+            </div>
+
+            <div class="dentista-row">
+                <div class="dentista-nome">Dra. Ana Clara</div>
+                <div class="dentista-acao"><button class="btn-acao btn-horarios">📅</button></div>
+                <div class="dentista-acao"><button class="btn-acao btn-editar">✏️</button></div>
+            </div>
+            
+            <div class="dentista-row">
+                <div class="dentista-nome">Dr. Carlos Eduardo</div>
+                <div class="dentista-acao"><button class="btn-acao btn-horarios">📅</button></div>
+                <div class="dentista-acao"><button class="btn-acao btn-editar">✏️</button></div>
+            </div>
+
+        </div>
+    </main>
+    
+</body>
+</html>

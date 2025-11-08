@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - Admin Buriozzi</title>
+    <link rel="stylesheet" href="css/style_desktop.css">
+    <link rel="stylesheet" href="css/style_desktop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+    <header class="admin-header">
+        <div class="admin-header-logo">
+            <img src="images/logo_buriozzi.png" alt="Logo Buriozzi">
+            <span>Instituto Buriozzi</span>
+        </div>
+        <a href="admin.html" class="btn-admin-sair">Sair</a>
+    </header>
+
+    <nav class="admin-nav">
+        <a href="agenda_admin.html" class="nav-item">Agenda</a>
+        <a href="pacientes_admin.html" class="nav-item ativo">Pacientes</a>
+        <a href="dentistas_admin.html" class="nav-item">Dentistas</a>
+    </nav>
+
+    <main class="pacientes-container">
+        <div class="pacientes-header">
+            <input type="text" placeholder="Buscar paciente..." class="paciente-search-input">
+            </div>
+
+        <div class="pacientes-lista">
+            <div class="paciente-row header">
+                <div class="paciente-nome">Nome do Paciente</div>
+                <div class="paciente-acao">Mensagens</div>
+                <div class="paciente-acao">Financeiro</div>
+                <div class="paciente-acao">Anexos</div>
+                <div class="paciente-acao">Históricos</div>
+                <div class="paciente-acao">Editar</div>
+            </div>
+
+            <div class="paciente-row">
+                <div class="paciente-nome">João da Silva</div>
+                <div class="paciente-acao"><button class="btn-acao">💬</button></div>
+                <div class="paciente-acao"><button class="btn-acao">💲</button></div>
+                <div class="paciente-acao"><button class="btn-acao">📎</button></div>
+                <div class="paciente-acao"><button class="btn-acao">📄</button></div>
+                <div class="paciente-acao"><button class="btn-acao btn-editar">✏️</button></div>
+            </div>
+
+            <div class="paciente-row">
+                <div class="paciente-nome">Maria Oliveira</div>
+                <div class="paciente-acao"><button class="btn-acao">💬</button></div>
+                <div class="paciente-acao"><button class="btn-acao">💲</button></div>
+                <div class="paciente-acao"><button class="btn-acao">📎</button></div>
+                <div class="paciente-acao"><button class="btn-acao">📄</button></div>
+                <div class="paciente-acao"><button class="btn-acao btn-editar">✏️</button></div>
+            </div>
+            
+            <div class="paciente-row">
+                <div class="paciente-nome">Carlos Souza</div>
+                <div class="paciente-acao"><button class="btn-acao">💬</button></div>
+                <div class="paciente-acao"><button class="btn-acao">💲</button></div>
+                <div class="paciente-acao"><button class="btn-acao">📎</button></div>
+                <div class="paciente-acao"><button class="btn-acao">📄</button></div>
+                <div class="paciente-acao"><button class="btn-acao btn-editar">✏️</button></div>
+            </div>
+
+            </div>
+    </main>
+    
+    </body>
+</html>

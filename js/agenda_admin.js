@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const diaAtual = new Date(segunda);
             diaAtual.setDate(segunda.getDate() + i);
             
-            const diaFormatado = diaAtual.getDate().toString().padStart(2, '0');
-            const mesFormatado = (diaAtual.getMonth() + 1).toString().padStart(2, '0');
+      
             
             // Acha o header do dia (data-dia-semana="1" para Segunda, etc.)
             const headerEl = agendaGrid.querySelector(`.grid-header[data-dia-semana="${i + 1}"]`);
             if (headerEl) {
-                headerEl.innerHTML = `${dias[i]} (${diaFormatado}/${mesFormatado})`;
+
+                headerEl.innerHTML = dias[i];
             }
         }
     }
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Vigia "Bloquear Horário"
             document.getElementById('btn-bloquear-horario').onclick = function() {
-                targetSlot.classList.remove('horario-livre');
+                targetSlot.classList.remove('horio-livre');
                 targetSlot.classList.add('horario-bloqueado');
                 targetSlot.innerHTML = 'Bloqueado'; // Texto genérico
                 fecharModal();

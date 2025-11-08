@@ -176,13 +176,15 @@ body.admin-body::before {
 .admin-nav {
     display: flex;
     background-color: #ffffff;
-    padding: 0 2rem;
-    margin-top: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    /* ... outros estilos ... */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    flex-shrink: 0; /* MUDANÇA: Não encolhe */
+    flex-shrink: 0; 
+    
+    /* AJUSTE AQUI */
+    max-width: 1600px; /* Tente um valor maior */
+    margin: 1.5rem auto 0 auto; /* Mantenha o 'auto' para centralizar */
+    padding: 0 2rem;
 }
 
 .nav-item {
@@ -206,13 +208,12 @@ body.admin-body::before {
 
 /* 4. O Container da Agenda (COM ROLAGEM) */
 .agenda-container {
+    /* AJUSTE AQUI */
+    max-width: 1900px; /* Use o MESMO valor de cima */
+    margin: 0 auto; /* Mantenha o 'auto' para centralizar */
+
+    /* Mantenha o resto como estava */
     padding: 1.5rem 2rem;
-    
-    /* MUDANÇA "COMPACTA": 
-       flex: 1 diz "ocupe o resto da tela"
-       overflow-y: auto diz "se o grid for maior, crie uma barra de rolagem SÓ AQUI"
-       min-height: 0 é um hack para o flexbox funcionar 100%
-    */
     flex: 1;
     overflow-y: auto;
     min-height: 0;
@@ -484,4 +485,355 @@ body.admin-body::before {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
+}
+
+/* --- ADIÇÕES PARA PÁGINA DE PACIENTES --- */
+
+/* Container Principal da Página de Pacientes */
+.pacientes-container {
+    padding: 1.5rem 2rem;
+    flex: 1; /* Ocupa o espaço restante */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for maior */
+    min-height: 0; /* Para flexbox funcionar corretamente */
+    
+    /* PONTO IMPORTANTE: Alinhe este max-width com o do seu .admin-nav */
+    max-width: 1600px; /* Use o mesmo valor que você ajustou para a agenda */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+/* Header com o campo de busca */
+.pacientes-header {
+    display: flex;
+    justify-content: flex-start; /* Alinha o input à esquerda */
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem; /* Espaço entre elementos, se houver mais futuramente */
+}
+
+.paciente-search-input {
+    padding: 12px 16px;
+    border: 1px solid #dbe1e7;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    width: 300px; /* Largura fixa para o campo de busca */
+    max-width: 100%;
+}
+
+.paciente-search-input:focus {
+    outline: none;
+    border-color: #6f42c1; /* Foco Roxo */
+    box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.15);
+}
+
+/* Lista/Tabela de Pacientes */
+.pacientes-lista {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Para os cantos arredondados */
+}
+
+/* Linha de Paciente (incluindo o cabeçalho) */
+.paciente-row {
+    display: grid;
+    /* Colunas: Nome (ocupa 2x o espaço), e 5 colunas de ação */
+    grid-template-columns: 2fr repeat(5, 1fr); 
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.paciente-row:last-child {
+    border-bottom: none; /* Remove a borda da última linha */
+}
+
+/* Estilo para o Cabeçalho da Tabela */
+.paciente-row.header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    padding-top: 0.75rem; /* Menos padding no header */
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e0e6ed; /* Borda mais grossa para o cabeçalho */
+}
+
+/* Células da Tabela */
+.paciente-nome {
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+.paciente-acao {
+    text-align: center; /* Centraliza os botões/ícones */
+    display: flex; /* Para centralizar o botão verticalmente */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botões de Ação dentro da tabela */
+.btn-acao {
+    background: none;
+    border: none;
+    font-size: 1.2rem; /* Tamanho dos ícones/emojis */
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    color: #6f42c1; /* Cor roxa para os ícones */
+}
+
+.btn-acao:hover {
+    background-color: #f0f4f8; /* Fundo leve no hover */
+}
+
+/* Botão de Editar específico, se quiser uma cor diferente */
+.btn-acao.btn-editar {
+    color: #28a745; /* Verde para o editar */
+}
+.btn-acao.btn-editar:hover {
+    background-color: #e6ffed; /* Fundo verde claro no hover */
+}
+
+
+/* --- ADIÇÕES PARA PÁGINA DE DENTISTAS --- */
+
+/* Container Principal da Página de Dentistas */
+.dentistas-container {
+    padding: 1.5rem 2rem;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    
+    /* Use o mesmo max-width que você definiu para a agenda e pacientes */
+    max-width: 1600px; 
+    margin: 0 auto;
+}
+
+/* Header com o campo de busca */
+.dentistas-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.dentista-search-input {
+    padding: 12px 16px;
+    border: 1px solid #dbe1e7;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    width: 300px;
+    max-width: 100%;
+}
+
+.dentista-search-input:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.15);
+}
+
+/* Lista/Tabela de Dentistas */
+.dentistas-lista {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Linha de Dentista (incluindo o cabeçalho) */
+.dentista-row {
+    display: grid;
+    /* MUDANÇA IMPORTANTE: 3 Colunas. 
+       A primeira (nome) é 2x maior que as outras duas. 
+    */
+    grid-template-columns: 2fr 1fr 1fr; 
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.dentista-row:last-child {
+    border-bottom: none;
+}
+
+/* Estilo para o Cabeçalho da Tabela */
+.dentista-row.header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e0e6ed;
+}
+
+/* Células da Tabela */
+.dentista-nome {
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dentista-acao {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para o botão de horários (ícone de calendário) */
+.btn-acao.btn-horarios {
+    color: #007bff; /* Azul */
+}
+.btn-acao.btn-horarios:hover {
+    background-color: #e6f2ff; /* Azul claro */
+}
+
+/* O .btn-acao e .btn-editar você já deve ter no CSS, 
+   mas não faz mal repetir ou deixar aqui */
+.btn-acao {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-acao.btn-editar {
+    color: #28a745; /* Verde */
+}
+.btn-acao.btn-editar:hover {
+    background-color: #e6ffed; /* Verde claro */
+}
+
+
+/* --- ADIÇÕES PARA PÁGINA PORTAL DO DENTISTA --- */
+
+/* Container Principal (similar ao de pacientes/dentistas) */
+.portal-container {
+    padding: 1.5rem 2rem;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    
+    /* Mesmo max-width das outras páginas admin para consistência */
+    max-width: 1600px; 
+    margin: 0 auto;
+}
+
+/* Header com a aba e a busca */
+.portal-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem; /* Espaço entre a aba e a busca */
+}
+
+.portal-tabs {
+    display: flex;
+}
+
+/* Estilo do botão "Pacientes" (baseado no mockup) */
+.portal-tab {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #6f42c1; /* Roxo */
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.portal-tab:hover {
+    background-color: #5a359a;
+}
+
+/* Lista/Tabela de Pacientes */
+.portal-lista {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Linha da Tabela */
+.portal-row {
+    display: grid;
+    /* 3 Colunas: Nome (2x) e duas ações (1x) */
+    grid-template-columns: 2fr 1fr 1fr; 
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.portal-row:last-child {
+    border-bottom: none;
+}
+
+/* Cabeçalho da Tabela */
+.portal-row.header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e0e6ed;
+}
+
+/* Células da Tabela */
+.portal-nome {
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.portal-acao {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Vamos reutilizar o .btn-acao que já existe, 
+   mas adicionar botões de texto/ação específicos */
+
+.btn-acao.btn-historico,
+.btn-acao.btn-adicionar {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0.6rem 1rem;
+    width: 200px; /* Largura fixa para alinhamento */
+}
+
+/* Botão "Ver Histórico" (Azul) */
+.btn-acao.btn-historico {
+    background-color: #007bff;
+}
+.btn-acao.btn-historico:hover {
+    background-color: #0056b3;
+}
+
+/* Botão "Adicionar" (Verde) */
+.btn-acao.btn-adicionar {
+    background-color: #28a745;
+}
+.btn-acao.btn-adicionar:hover {
+    background-color: #218838;
 }
