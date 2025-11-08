@@ -42,7 +42,7 @@ O foco principal é **otimizar o atendimento e a comunicação interna da clíni
 
 | Página          | Função                     | Link                        |
 | --------------- | -------------------------- | --------------------------- |
-| `index.html`    | Página de login do usuário | *(inserir link do arquivo)* |
+| `index.html`    | Página de login do usuário | *https://feliprow.github.io/projeto_buriozzi/* |
 | `admin.html`    | Painel do administrador    | *(inserir link do arquivo)* |
 | `dentista.html` | Painel do dentista         | *(inserir link do arquivo)* |
 
@@ -61,7 +61,7 @@ O foco principal é **otimizar o atendimento e a comunicação interna da clíni
 * **HTML5**
 * **CSS3**
 * **JavaScript (básico)**
-* **Ferramentas de apoio:** Trello, Miro, Google Docs, Gemini
+* **Ferramentas de apoio:** Trello, Miro, Google Docs, Gemini.
 
 ---
 
