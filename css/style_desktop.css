@@ -7,7 +7,7 @@
     box-sizing: border-box; 
 }
 
-/* 2. O "Corpo" da página e o wrapper para centralizar tudo */
+/* 2. O "Corpo" da página de login (padrão) */
 body {
     font-family: 'Poppins', sans-serif; 
     display: flex;
@@ -27,7 +27,7 @@ body {
     z-index: 10; /* Garante que fique na frente do blur */
 }
 
-/* 3. O "Truque" do Fundo com Blur */
+/* 3. O "Truque" do Fundo com Blur (para a tela de login) */
 body::before {
     content: '';
     position: absolute;
@@ -47,7 +47,6 @@ body::before {
 .admin-logo {
     width: 90px;
     height: auto;
-    /* Usar margin-bottom no .admin-conteudo-externo ao invés daqui */
 }
 
 /* 6. O Título */
@@ -61,11 +60,11 @@ body::before {
 /* 7. A Caixa de Login Branca (do seu mockup) */
 .admin-login-box {
     width: 100%;
-    max-width: 380px; /* Reduzi um pouco a largura para ficar mais compacto */
+    max-width: 380px; 
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    padding: 2rem; /* Reduzi um pouco o padding interno */
+    padding: 2rem; 
 }
 
 /* 8. Os Inputs */
@@ -87,7 +86,7 @@ body::before {
 
 /* 9. O Botão "entrar" */
 .btn-admin-entrar {
-    display: block; /* Para garantir que o link ocupe toda a largura */
+    display: block; 
     width: 100%;
     padding: 14px;
     border: none;
@@ -97,7 +96,7 @@ body::before {
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none; /* Remove o sublinhado do link */
+    text-decoration: none; 
     
     background-color: #6f42c1; /* Roxo */
     color: #ffffff;
@@ -105,4 +104,384 @@ body::before {
 }
 .btn-admin-entrar:hover {
     background-color: #5a359a;
+}
+
+
+/* --- ADIÇÕES PARA O DASHBOARD ADMIN (AGENDA) --- */
+
+/* 1. O "Body" da parte interna do admin (COM CORREÇÕES) */
+body.admin-body {
+    background-color: #f0f4f8; /* Fundo cinza claro */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    padding: 0; /* Sem padding */
+    overflow: hidden; /* MUDANÇA: Impede a PÁGINA de rolar */
+    
+    min-width: 1024px; /* Limite para "espremer" */
+}
+
+/* "Desliga" o blur (o ::before) SÓ na página da agenda */
+body.admin-body::before {
+    display: none;
+}
+
+/* 2. O Cabeçalho (COM A CORREÇÃO "GRUDADO") */
+.admin-header {
+    display: flex;
+    justify-content: flex-start; /* "Desgruda" 1/2 */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0; /* MUDANÇA: Não encolhe */
+}
+
+.admin-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-header-logo img {
+    width: 40px;
+    height: auto;
+}
+
+.admin-header-logo span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.btn-admin-sair {
+    background-color: #6f42c1; 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    margin-left: 20px; 
+}
+.btn-admin-sair:hover {
+    background-color: #5a359a;
+}
+
+/* 3. A Navegação (Abas) */
+.admin-nav {
+    display: flex;
+    background-color: #ffffff;
+    padding: 0 2rem;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0; /* MUDANÇA: Não encolhe */
+}
+
+.nav-item {
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #000;
+}
+
+.nav-item.ativo {
+    color: #6f42c1;
+    border-bottom-color: #6f42c1;
+}
+
+/* 4. O Container da Agenda (COM ROLAGEM) */
+.agenda-container {
+    padding: 1.5rem 2rem;
+    
+    /* MUDANÇA "COMPACTA": 
+       flex: 1 diz "ocupe o resto da tela"
+       overflow-y: auto diz "se o grid for maior, crie uma barra de rolagem SÓ AQUI"
+       min-height: 0 é um hack para o flexbox funcionar 100%
+    */
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+/* 5. O Grid do Calendário/Agenda */
+.agenda-grid {
+    display: grid;
+    grid-template-columns: 100px repeat(5, 1fr);
+    border: 1px solid #dbe1e7;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.grid-header {
+    padding: 1rem 0.5rem;
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #dbe1e7;
+    border-left: 1px solid #dbe1e7;
+}
+
+.grid-horario-label {
+    height: 60px; /* Compacto */
+    padding: 1rem 0.5rem;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    border-bottom: 1px solid #dbe1e7;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item {
+    height: 60px; /* Compacto */
+    border-bottom: 1px solid #dbe1e7;
+    border-left: 1px solid #dbe1e7;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+    overflow: hidden; 
+}
+
+.grid-item strong,
+.grid-item span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* --- Os 3 Estados que você pediu --- */
+.horario-livre:hover {
+    background-color: rgba(40, 167, 69, 0.1); 
+}
+.horario-pendente {
+    background-color: rgba(255, 193, 7, 0.2); 
+    border-color: #ffc107;
+    font-weight: 500;
+    color: #856404;
+}
+.horario-pendente strong {
+    color: #856404;
+}
+.horario-ocupado {
+    background-color: rgba(220, 53, 69, 0.1); 
+    border-color: #dc3545;
+    font-weight: 500;
+    color: #721c24;
+}
+.horario-ocupado strong {
+    color: #721c24;
+}
+.horario-bloqueado {
+    background-color: #e9ecef; 
+    color: #6c757d;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icone-sino {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* --- ADIÇÕES PARA O MODAL (POP-UP) DA AGENDA --- */
+
+/* 1. O Fundo Escuro (Backdrop) */
+.admin-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+/* 2. A Caixa Branca (Pop-up) */
+.admin-modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza 100% */
+    
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px; /* Largura do pop-up */
+    z-index: 101;
+    
+    animation: zoomIn 0.2s ease-out;
+}
+
+/* 3. Conteúdo do Pop-up */
+.admin-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.admin-modal-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #888;
+    cursor: pointer;
+}
+.admin-modal-close:hover {
+    color: #000;
+}
+
+.admin-modal-body {
+    padding: 1.5rem;
+}
+
+.admin-modal-body p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* 4. Formulário e Botões DENTRO do Pop-up */
+.admin-modal-form label {
+    display: block;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-modal-form input,
+.admin-modal-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dbe1e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.admin-modal-form select[size="4"] {
+    height: 120px;
+}
+.admin-modal-form input:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.15);
+}
+
+/* Botões de Ação (Salvar, Cancelar, etc.) */
+.admin-modal-botoes {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+.btn-admin-modal {
+    flex: 1; 
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Botão Salvar/Agendar (Verde) */
+.btn-salvar {
+    background-color: #28a745;
+    color: #ffffff;
+}
+.btn-salvar:hover {
+    background-color: #218838;
+}
+
+/* Botão Cancelar (Vermelho) */
+.btn-cancelar {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+.btn-cancelar:hover {
+    background-color: #c82333;
+}
+
+/* Botão Reagendar (Cinza) */
+.btn-reagendar {
+    background-color: #f0f4f8;
+    color: #333;
+    border: 1px solid #dbe1e7;
+}
+.btn-reagendar:hover {
+    background-color: #e2e6ea;
+}
+
+/* Estilo para o botão "Bloquear" */
+.btn-bloquear {
+    background-color: #6c757d; /* Cinza */
+    color: #ffffff;
+    flex: 1; /* Ocupa metade do espaço */
+}
+.btn-bloquear:hover {
+    background-color: #5a6268;
+}
+
+/* O container dos botões "Bloquear" e "Incluir" */
+.admin-modal-form .admin-modal-botoes {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Ajuste para o botão "Incluir" dividir espaço */
+.admin-modal-form .btn-salvar {
+    width: auto;
+    flex: 1;
+}
+
+/* Animação */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }

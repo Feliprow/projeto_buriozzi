@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="admin-body"> <header class="admin-header">
+<body class="admin-body"> <!-- Body com fundo cinza -->
+
+    <header class="admin-header">
         <div class="admin-header-logo">
             <img src="images/logo_buriozzi.png" alt="Logo Buriozzi">
             <span>Instituto Buriozzi</span>
@@ -20,7 +22,7 @@
     <nav class="admin-nav">
         <a href="agenda_admin.html" class="nav-item ativo">Agenda</a>
         <a href="#" class="nav-item">Pacientes</a>
-        <a href="#" class="nav-item">Financeiro</a>
+        <!-- MUDANÇA: Aba "Financeiro" removida -->
         <a href="#" class="nav-item">Dentistas</a>
     </nav>
 
@@ -28,32 +30,47 @@
 
         <div class="agenda-grid">
             
+            <!-- Linha dos Dias da Semana (será preenchida pelo JS) -->
             <div class="grid-header grid-horario-label">Horários</div>
-            <div class="grid-header">Segunda (04/11)</div>
-            <div class="grid-header">Terça (05/11)</div>
-            <div class="grid-header">Quarta (06/11)</div>
-            <div class="grid-header">Quinta (07/11)</div>
-            <div class="grid-header">Sexta (08/11)</div>
+            <div class="grid-header" data-dia-semana="1">Segunda</div>
+            <div class="grid-header" data-dia-semana="2">Terça</div>
+            <div class="grid-header" data-dia-semana="3">Quarta</div>
+            <div class="grid-header" data-dia-semana="4">Quinta</div>
+            <div class="grid-header" data-dia-semana="5">Sexta</div>
 
+            <!-- Linha 07:00 (Bloqueada) -->
+            <div class="grid-horario-label">07:00</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+
+            <!-- Linha 08:00 -->
+            <div class="grid-horario-label">08:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <!-- Linha 09:00 (Com seus placeholders) -->
             <div class="grid-horario-label">09:00</div>
-            
             <div class="grid-item horario-pendente">
                 <strong>(Pendente)</strong>
                 <span>Felipe Neres</span>
                 <span>Limpeza</span>
             </div>
-            
             <div class="grid-item horario-livre"></div>
-            
             <div class="grid-item horario-ocupado">
                 <strong>Felipe Neres</strong>
                 <span>Implante (Etapa 1)</span>
                 <div class="icone-sino">🔔</div>
             </div>
-
             <div class="grid-item horario-livre"></div>
             <div class="grid-item horario-livre"></div>
 
+            <!-- Linha 10:00 (Com seus placeholders) -->
             <div class="grid-horario-label">10:00</div>
             <div class="grid-item horario-livre"></div>
             <div class="grid-item horario-ocupado">
@@ -64,6 +81,7 @@
             <div class="grid-item horario-livre"></div>
             <div class="grid-item horario-livre"></div>
 
+            <!-- Linha 11:00 (Com seus placeholders) -->
             <div class="grid-horario-label">11:00</div>
             <div class="grid-item horario-livre"></div>
             <div class="grid-item horario-livre"></div>
@@ -75,15 +93,73 @@
             </div>
             <div class="grid-item horario-livre"></div>
 
+            <!-- Linha 12:00 (Bloqueada) -->
             <div class="grid-horario-label">12:00</div>
-             <div class="grid-item horario-bloqueado">Almoço</div>
-             <div class="grid-item horario-bloqueado">Almoço</div>
-             <div class="grid-item horario-bloqueado">Almoço</div>
-             <div class="grid-item horario-bloqueado">Almoço</div>
-             <div class="grid-item horario-bloqueado">Almoço</div>
+            <div class="grid-item horario-bloqueado">Almoço</div>
+            <div class="grid-item horario-bloqueado">Almoço</div>
+            <div class="grid-item horario-bloqueado">Almoço</div>
+            <div class="grid-item horario-bloqueado">Almoço</div>
+            <div class="grid-item horario-bloqueado">Almoço</div>
+
+            <!-- Linha 13:00 -->
+            <div class="grid-horario-label">13:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <!-- Linha 14:00 -->
+            <div class="grid-horario-label">14:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <!-- Linha 15:00 -->
+            <div class="grid-horario-label">15:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <!-- Linha 16:00 -->
+            <div class="grid-horario-label">16:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            
+            <!-- Linha 17:00 -->
+            <div class="grid-horario-label">17:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <!-- Linha 18:00 -->
+            <div class="grid-horario-label">18:00</div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+            <div class="grid-item horario-livre"></div>
+
+            <!-- Linha 19:00 (Bloqueada) -->
+            <div class="grid-horario-label">19:00</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
+            <div class="grid-item horario-bloqueado">Fechado</div>
 
         </div>
     </main>
     
+    <script src="js/agenda_admin.js" defer></script>
 </body>
 </html>
