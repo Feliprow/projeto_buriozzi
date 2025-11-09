@@ -83,7 +83,7 @@ O objetivo foi unir aprendizado técnico com uma solução real, atendendo a uma
 
 👤 **Felipe Vieira**
 📧 felipe.vieira000@cs.unicid.edu.br
-📍 Estudante de Análise e Desenvolvimento de Sistemas – Faculdade Unicid
+📍 Estudante de Análise e Desenvolvimento de Sistemas – Universidade cidade de São Paulo (UNICID)
 
 ---
 
