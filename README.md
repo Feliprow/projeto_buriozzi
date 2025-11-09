@@ -65,12 +65,6 @@ O foco principal é **otimizar o atendimento e a comunicação interna da clíni
 
 ---
 
-## 🧭 Status do Projeto
-
-🚧 *Em desenvolvimento* – Versão inicial do protótipo concluída.
-As próximas etapas incluem aprimorar a responsividade e implementar funcionalidades dinâmicas com JavaScript.
-
----
 
 ## 🏁 Conclusão
 
