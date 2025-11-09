@@ -74,7 +74,7 @@ As próximas etapas incluem aprimorar a responsividade e implementar funcionalid
 
 ## 🏁 Conclusão
 
-Este projeto representa a aplicação prática dos conhecimentos adquiridos na disciplina de **Enganharia de Software**, sob a orientação do **Prof. Me. Jadir Custódia Mendonça Jr.**.
+Este projeto representa a aplicação prática dos conhecimentos adquiridos na disciplina de **Engenharia de Software**, sob a orientação do **Prof. Me. Jadir Custódia Mendonça Jr.**.
 O objetivo foi unir aprendizado técnico com uma solução real, atendendo a uma necessidade concreta de um cliente.
 
 ---
