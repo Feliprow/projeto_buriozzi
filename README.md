@@ -50,7 +50,8 @@ O foco principal é **otimizar o atendimento e a comunicação interna da clíni
 
 ## 🧾 Documentação
 
-📄 [Documentação completa do projeto (PDF)](INSIRA_LINK_AQUI)
+📄 [Documentação completa do projeto (PDF)](https://github.com/user-attachments/files/23445154/buriozzi_v5.pdf)
+()
 📋 [Quadro no Trello](https://trello.com/b/pfVROa45/projeto-instituto-buriozzi)
 🎨 [Wireframe de inspiração (Miro)](https://miro.com/welcomeonboard/aHc4S3dGdFZXTGhYbFpYSGxaczVKZy9FK3Z4QW1vMEtnWnllMkJMRW96VGRNUHROUmpiMWdkeWJEamRuRkQ3OWR4NndSN2E3NjdFR011aGhWeGp0eG9SQmFkT2VDaFNUYkNRSVdFZDBOYVVMZ2NDUHh6TWE4YnJlMGFyRFh4VTFNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=194175571588)
 
